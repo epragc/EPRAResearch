@@ -90,7 +90,7 @@ window.EPRA_HUB = {
       items: [
         {
           title: "Part 1",
-          href: "https://bit.ly/4i4HftX",
+          href: "https://bit.ly/4vvvpgr",
           type: "link",
         },
         {
