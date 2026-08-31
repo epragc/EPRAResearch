@@ -173,28 +173,43 @@ a.item:focus-visible{box-shadow:0 0 0 2px var(--accent)}
 /* ===== Footer ============================================================ */
 footer{
   margin-top:clamp(10px,1.7vh,18px);
-  color:var(--ink-faint);font-size:12px;
-  display:flex;flex-wrap:wrap;gap:4px 14px;
+  color:var(--ink-faint);
+  font-size:clamp(15px,4vw,19px);      /* same size as the tagline */
+  display:flex;flex-wrap:wrap;gap:4px 8px;
   align-items:center;justify-content:center;
 }
 footer a{color:var(--epra-grey);text-decoration:none}
 footer a:hover{text-decoration:underline}
 
 /* ===== Short viewports (small phones, laptop browser chrome) ============= */
-@media (max-height:720px){
-  :root{--gap:7px;--pad-y:9px}
-  .page{padding:10px 18px}
-  .hero{margin-bottom:9px}
-  .hero h1{font-size:clamp(23px,6.1vw,29px)}
-  .hero p{font-size:13px}
-  .card h2{font-size:clamp(15px,4.1vw,17.5px);margin-bottom:3px}
-  .card .desc{font-size:12px;line-height:1.4}
-  .empty{font-size:11.5px;margin-top:7px;padding-top:7px}
-  ul.items{gap:5px;margin-top:7px;padding-top:7px}
-  a.item{padding:9px 14px}   /* held at 9px: any less and the tap target
-                                drops below a comfortable size */
+@media (max-height:880px){
+  :root{--gap:7px;--pad-y:10px}
+  .page{padding:12px 18px}
+  .hero{margin-bottom:10px}
+  .hero h1{font-size:clamp(24px,6.6vw,32px)}
+  .hero p,footer{font-size:clamp(13px,3.7vw,16px)}   /* kept in lockstep */
+  .card h2{font-size:clamp(16px,4.4vw,19px);margin-bottom:3px}
+  .card .desc{font-size:12.5px;line-height:1.4}
+  .empty{font-size:11.5px;margin-top:8px;padding-top:8px}
+  ul.items{gap:6px;margin-top:8px;padding-top:8px}
+  a.item{padding:9px 14px}
   .item-title{font-size:15px}
-  footer{margin-top:9px;font-size:11px}
+  footer{margin-top:9px}
+}
+
+@media (max-height:700px){
+  :root{--gap:6px;--pad-y:8px}
+  .page{padding:9px 18px}
+  .hero{margin-bottom:8px}
+  .hero h1{font-size:clamp(22px,5.9vw,27px)}
+  .hero p,footer{font-size:clamp(12.5px,3.4vw,14px)} /* kept in lockstep */
+  .card h2{font-size:clamp(14.5px,4vw,16.5px)}
+  .card .desc{font-size:11.5px;line-height:1.36}
+  ul.items{gap:5px;margin-top:6px;padding-top:6px}
+  a.item{padding:9px 12px}   /* held at 9px: any less and the tap target
+                                drops below a comfortable size */
+  .item-title{font-size:14px}
+  footer{margin-top:8px}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -319,6 +334,7 @@ footer a:hover{text-decoration:underline}
   /* --- footer ------------------------------------------------------------ */
   var ft = D.footer || {}, fm = document.getElementById('foot');
   if (ft.contact) {
+    fm.appendChild(el('span', null, 'Reach out at:'));
     var a1 = el('a'); a1.href = 'mailto:' + ft.contact; a1.textContent = ft.contact; fm.appendChild(a1);
   }
 })();

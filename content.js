@@ -55,7 +55,8 @@ window.EPRA_HUB = {
       accent: "blue",
       title: "Investment portfolio insights: 2012-2026",
       description:
-        "Thirteen years of European listed real estate portfolios, by country and by sector.",
+        "Check out the evolution of the investment property portfolios of " +
+        "European property companies in the past thirteen years",
       items: [
         {
           title: "Listed real estate: Investment Portfolio Insights",
@@ -70,10 +71,11 @@ window.EPRA_HUB = {
       accent: "grey",
       title: "Discover the new EPRA TMT platform!",
       description:
-        "Index data, company coverage and market analytics, all in one place.",
+        "A new interactive platform covering 20+ years of data on listed " +
+        "real estate markets around the world",
       items: [
         {
-          title: "Access the platform here",
+          title: "Check it out here",
           href: "https://bit.ly/4gDzLMa",
           type: "link",
         },
@@ -86,7 +88,8 @@ window.EPRA_HUB = {
       layout: "row",          // Part 1 and Part 2 side by side
       title: "EPRA & INREV: One Real Estate Universe",
       description:
-        "Listed and non-listed real estate brought into one comparable view.",
+        "Listed and non-listed real estate are different routes to the same " +
+        "underlying asset class: Institutional-grade European commercial property.",
       items: [
         {
           title: "Part 1",
