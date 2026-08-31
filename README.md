@@ -73,7 +73,7 @@ In the repo: **Settings → Pages → Source: Deploy from a branch → `main` / 
 After a minute the page is live at:
 
 ```
-https://epraresearch.epra.com/
+https://research.epra.com/
 ```
 
 To update anything during the conference:
@@ -92,7 +92,7 @@ The QR already encodes the live address. Only re-run this if the URL changes:
 
 ```bash
 pip install segno
-python qr/make_qr.py https://epraresearch.epra.com/
+python qr/make_qr.py https://research.epra.com/
 ```
 
 That rewrites three files in `qr/`:
