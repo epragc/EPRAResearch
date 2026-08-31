@@ -4,7 +4,7 @@ EPRA Research conference hub: QR code generator.
 Regenerate the QR code any time the URL changes:
 
     pip install segno
-    python make_qr.py https://epragc.github.io/EPRAResearch/
+    python make_qr.py https://epraresearch.epra.com/
 
 Outputs, next to this script:
     epra-conference-qr.svg  -> vector, use this in PowerPoint / print
@@ -27,8 +27,8 @@ EPRA_LIGHT_BLUE = "#69AAF3"  # sub-caption on blue
 EPRA_FONT_STACK = "Overpass Light, Overpass, Franklin Gothic Book, Arial, sans-serif"
 EPRA_FONT_WEIGHT = "300"
 
-# GitHub Pages address for github.com/epragc/EPRAResearch
-DEFAULT_URL = "https://epragc.github.io/EPRAResearch/"
+# Custom domain for the GitHub Pages site (github.com/epragc/EPRAResearch)
+DEFAULT_URL = "https://epraresearch.epra.com/"
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
