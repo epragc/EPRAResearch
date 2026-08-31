@@ -59,9 +59,8 @@ window.EPRA_HUB = {
       items: [
         {
           title: "Listed real estate: Investment Portfolio Insights",
-          href: "docs/listed-real-estate-investment-portfolio-insights.pdf",
+          href: "https://bit.ly/4cN6BJm",
           type: "pdf",
-          meta: "PDF · 8 pages · 1.1 MB",
         },
       ],
     },
@@ -73,18 +72,32 @@ window.EPRA_HUB = {
       description:
         "Index data, company coverage and market analytics, all in one place.",
       items: [
-        // ---- ADD DOCUMENTS AND LINKS FOR THIS SECTION HERE ----
+        {
+          title: "Access the platform here",
+          href: "https://bit.ly/4gDzLMa",
+          type: "link",
+        },
       ],
     },
 
     {
       id: "epra-inrev",
       accent: "gold",
+      layout: "row",          // Part 1 and Part 2 side by side
       title: "EPRA & INREV: One Real Estate Universe",
       description:
         "Listed and non-listed real estate brought into one comparable view.",
       items: [
-        // ---- ADD DOCUMENTS AND LINKS FOR THIS SECTION HERE ----
+        {
+          title: "Part 1",
+          href: "https://bit.ly/4vTmN3a",
+          type: "link",
+        },
+        {
+          title: "Part 2",
+          href: "https://bit.ly/4i4HftX",
+          type: "link",
+        },
       ],
     },
 

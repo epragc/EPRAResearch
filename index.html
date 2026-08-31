@@ -34,8 +34,8 @@
 
   /* Vertical rhythm scales with the viewport so the three boxes
      stay on one screen from a small phone up to a laptop.          */
-  --gap:clamp(10px,1.6vh,18px);
-  --pad-y:clamp(14px,2.1vh,22px);
+  --gap:clamp(8px,1.35vh,14px);
+  --pad-y:clamp(12px,1.75vh,18px);
   --pad-x:clamp(18px,3.4vw,28px);
 }
 
@@ -62,11 +62,11 @@ body{
 .page{
   width:100%;max-width:680px;
   margin:auto;
-  padding:clamp(18px,3vh,34px) 20px;
+  padding:clamp(14px,2.3vh,26px) 20px;
 }
 
 /* ===== Masthead: the EPRA mark, then the title ========================== */
-.hero{margin-bottom:clamp(16px,2.6vh,28px)}
+.hero{margin-bottom:clamp(12px,1.9vh,20px)}
 .hero h1{
   margin:0 0 6px;
   display:flex;align-items:center;justify-content:center;
@@ -121,12 +121,18 @@ main{display:flex;flex-direction:column;gap:var(--gap)}
 
 /* ===== Item list ========================================================= */
 ul.items{
-  list-style:none;margin:var(--pad-y) 0 0;padding:var(--pad-y) 0 0;
+  list-style:none;margin:11px 0 0;padding:11px 0 0;
   border-top:1px dashed rgba(255,255,255,.20);
   display:flex;flex-direction:column;gap:8px;
 }
 /* Reads as a button: raised surface, real border, trailing action arrow.
    Phones have no hover, so the affordance has to be visible at rest.   */
+/* layout:"row" puts the buttons side by side, split evenly, with the
+   gap above providing the small space between them.                  */
+ul.items[data-layout="row"]{flex-direction:row;align-items:stretch}
+ul.items[data-layout="row"] li{flex:1 1 0;min-width:0}
+ul.items[data-layout="row"] a.item{height:100%;padding-left:10px;padding-right:10px}
+
 a.item{
   display:block;padding:11px 16px;border-radius:10px;
   border:1px solid rgba(255,255,255,.34);
@@ -154,7 +160,7 @@ a.item:focus-visible{box-shadow:0 0 0 2px var(--accent)}
 
 /* ===== Empty state: one compact line, not a big box ====================== */
 .empty{
-  margin:var(--pad-y) 0 0;padding:var(--pad-y) 0 0;
+  margin:11px 0 0;padding:11px 0 0;
   border-top:1px dashed rgba(255,255,255,.20);
   color:var(--ink-faint);font-size:12.5px;line-height:1.45;
 }
@@ -166,7 +172,7 @@ a.item:focus-visible{box-shadow:0 0 0 2px var(--accent)}
 
 /* ===== Footer ============================================================ */
 footer{
-  margin-top:clamp(14px,2.4vh,24px);
+  margin-top:clamp(10px,1.7vh,18px);
   color:var(--ink-faint);font-size:12px;
   display:flex;flex-wrap:wrap;gap:4px 14px;
   align-items:center;justify-content:center;
@@ -176,17 +182,19 @@ footer a:hover{text-decoration:underline}
 
 /* ===== Short viewports (small phones, laptop browser chrome) ============= */
 @media (max-height:720px){
-  :root{--gap:8px;--pad-y:11px}
-  .page{padding:14px 18px}
-  .hero{margin-bottom:12px}
-  .hero h1{font-size:clamp(25px,6.6vw,32px)}
-  .hero p{font-size:14px}
-  .card h2{font-size:clamp(16px,4.4vw,19px)}
-  .card .desc{font-size:12.5px}
-  .empty{font-size:11.5px;margin-top:9px;padding-top:9px}
-  ul.items{gap:6px}
-  a.item{padding:9px 14px}
-  footer{margin-top:11px;font-size:11px}
+  :root{--gap:7px;--pad-y:9px}
+  .page{padding:10px 18px}
+  .hero{margin-bottom:9px}
+  .hero h1{font-size:clamp(23px,6.1vw,29px)}
+  .hero p{font-size:13px}
+  .card h2{font-size:clamp(15px,4.1vw,17.5px);margin-bottom:3px}
+  .card .desc{font-size:12px;line-height:1.4}
+  .empty{font-size:11.5px;margin-top:7px;padding-top:7px}
+  ul.items{gap:5px;margin-top:7px;padding-top:7px}
+  a.item{padding:9px 14px}   /* held at 9px: any less and the tap target
+                                drops below a comfortable size */
+  .item-title{font-size:15px}
+  footer{margin-top:9px;font-size:11px}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -277,6 +285,7 @@ footer a:hover{text-decoration:underline}
       card.appendChild(e);
     } else {
       var ul = el('ul', 'items');
+      ul.setAttribute('data-layout', s.layout || 'column');
       items.forEach(function (it) {
         var li = el('li');
         var a = el('a', 'item');
