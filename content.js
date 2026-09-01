@@ -46,8 +46,8 @@ window.EPRA_HUB = {
      Opens the visitor's own mail app with these fields pre-filled. The
      recipient is left blank so they type their own address.             */
   emailMe: {
-    label:   "Email this link to myself",
-    subject: "https://research.epra.com/",
+    label:   "Email this dashboard to myself",
+    subject: "EPRA Research - save the content for later",
     /* Real line breaks below are preserved in the email. */
     body:
 `Hi there,
@@ -55,6 +55,8 @@ window.EPRA_HUB = {
 Thanks a lot for your interest in our research. We do hope you are enjoying the conference.
 
 You can find the same dashboard at: https://research.epra.com/, this will allow you to access the content on your laptop once the conference is finished.
+
+Please do not hesitate to get in touch with us at research@epra.com should you have any questions or wish to discuss our research further.
 
 Best,
 EPRA Research team`,
