@@ -118,7 +118,7 @@ EPRA Research team`,
         },
         {
           title: "Part 2",
-          href: "https://bit.ly/4vTmN3a",
+          href: "https://bit.ly/3T43ZAc",
           type: "link",
         },
       ],
