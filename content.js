@@ -54,7 +54,7 @@ window.EPRA_HUB = {
 
 Thanks a lot for your interest in our research. We do hope you are enjoying the conference.
 
-You can find the same dashboard at: https://research.epra.com/, this will allow you to access the content on your laptop once this fantastic conference is finished.
+You can find the same dashboard at: https://research.epra.com/, this will allow you to access the content on your laptop once the conference is finished.
 
 Best,
 EPRA Research team`,
