@@ -48,7 +48,16 @@ window.EPRA_HUB = {
   emailMe: {
     label:   "Email this link to myself",
     subject: "https://research.epra.com/",
-    body:    "Check our research out at: https://research.epra.com/",
+    /* Real line breaks below are preserved in the email. */
+    body:
+`Hi there,
+
+Thanks a lot for your interest in our research. We do hope you are enjoying the conference.
+
+You can find the same dashboard at: https://research.epra.com/, this will allow you to access the content on your laptop once this fantastic conference is finished.
+
+Best,
+EPRA Research team`,
   },
 
   /* ---- Footer ----------------------------------------------------------- */
