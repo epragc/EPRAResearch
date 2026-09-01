@@ -42,6 +42,15 @@ window.EPRA_HUB = {
     tagline: "Discover our new projects!",
   },
 
+  /* ---- "Email it to myself" button --------------------------------------
+     Opens the visitor's own mail app with these fields pre-filled. The
+     recipient is left blank so they type their own address.             */
+  emailMe: {
+    label:   "Email this link to myself",
+    subject: "https://research.epra.com/",
+    body:    "Check our research out at: https://research.epra.com/",
+  },
+
   /* ---- Footer ----------------------------------------------------------- */
   footer: {
     contact: "research@epra.com",

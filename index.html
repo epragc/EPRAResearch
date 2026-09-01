@@ -176,6 +176,25 @@ a.item:focus-visible{box-shadow:0 0 0 2px var(--accent)}
   padding:1px 5px;border-radius:4px;color:var(--ink-soft);
 }
 
+/* ===== "Email it to myself" ============================================== */
+/* Deliberately quieter than the section buttons: it is a utility, not
+   one of the three things we are pointing people at.                   */
+#emailMe{margin:clamp(10px,1.6vh,16px) 0 0}
+#emailMe a{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 16px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.30);
+  color:var(--ink-soft);text-decoration:none;
+  font-size:clamp(12.5px,3.4vw,14px);
+  transition:background .15s,border-color .15s,color .15s;
+}
+#emailMe a:hover,#emailMe a:focus-visible{
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.55);
+  color:var(--ink);outline:none;
+}
+#emailMe svg{width:15px;height:15px;flex:0 0 15px}
+
 /* ===== Footer ============================================================ */
 footer{
   margin-top:clamp(10px,1.7vh,18px);
@@ -236,6 +255,8 @@ footer a:hover{text-decoration:underline}
   </header>
 
   <main id="sections"></main>
+
+  <p id="emailMe"></p>
 
   <footer id="foot"></footer>
 
@@ -336,6 +357,19 @@ footer a:hover{text-decoration:underline}
 
     host.appendChild(card);
   });
+
+  /* --- "email it to myself": a mailto with the recipient left blank ------ */
+  var em = D.emailMe;
+  if (em && em.label) {
+    var wrap = document.getElementById('emailMe');
+    var link = el('a');
+    link.href = 'mailto:?subject=' + encodeURIComponent(em.subject || '') +
+                '&body='           + encodeURIComponent(em.body || '');
+    link.innerHTML = svg('<rect x="2" y="4" width="20" height="16" rx="2"/>' +
+                         '<polyline points="2 7 12 13 22 7"/>');
+    link.appendChild(el('span', null, em.label));
+    wrap.appendChild(link);
+  }
 
   /* --- footer ------------------------------------------------------------ */
   var ft = D.footer || {}, fm = document.getElementById('foot');
